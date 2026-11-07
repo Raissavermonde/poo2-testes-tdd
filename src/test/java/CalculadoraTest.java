@@ -57,5 +57,8 @@ public class CalculadoraTest {
     @Test
     void dividirPorZeroLancaExcecao() {
         assertThrows(ArithmeticException.class, () -> calculadora.dividir(10.0, 0.0));
+    }    @Test
+    void dividirZeroPorZeroLancaExcecao() {
+        assertThrows(ArithmeticException.class, () -> calculadora.dividir(0.0, 0.0));
     }
 }
