@@ -4,7 +4,9 @@ public class Calculadora {
     }
 
     public double dividir(double a, double b) {
-        // implementar o tratamento da divisão por zero
+        if (b == 0) {
+            throw new ArithmeticException("Divisão por zero não é permitida");
+        }
         return a / b;
     }
 }
