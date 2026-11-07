@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Compra {
     public BigDecimal calcularDesconto(BigDecimal valor) {
@@ -6,7 +7,7 @@ public class Compra {
             throw new IllegalArgumentException("Valor da compra não pode ser negativo");
         }
         if (valor.compareTo(new BigDecimal("100.00")) >= 0) {
-            return valor.multiply(new BigDecimal("0.10"));
+            return valor.multiply(new BigDecimal("0.10")).setScale(2, RoundingMode.HALF_UP);
         }
         return new BigDecimal("0.00");
     }
